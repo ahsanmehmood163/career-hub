@@ -1,0 +1,156 @@
+
+/* contact */
+.contact-container{
+    background:url('../images/contact-baner.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: opacity(0.9);
+    color: white;
+    margin-top: 7vh ;
+}
+
+.contact-main{
+    margin-top: 50vh;
+    margin-bottom: 2vh;
+    display: flex;
+    height: auto;
+    width:90%;
+    /*border: 1px solid black; */
+    margin: auto;
+}
+.contact-details{
+    margin-left: 2vw;
+    width: 60%;
+}
+.form-details{
+    border: 1px solid black;
+    background-color: rgb(143, 137, 137);
+    height: auto;
+    width: 40%;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+    
+.details{
+    margin-top: 5vh;
+    margin-left: 1vw;
+}
+.social{
+    margin-left: 2vw;
+    margin-top: 3vw;
+}
+.social-icons{
+    display: flex;
+    margin-top: 5vh;
+    margin-left: 12vw;
+}
+.icon{
+    height: auto;
+    width:auto;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+.icon:hover{
+    opacity: 0.5;
+}
+.icon-img{
+    height:7vh;
+    width: 3vw;
+}
+.imp-details{
+    height: 40vh;
+    width: 98%;
+    display: flex;
+    margin-top: 5vh;
+}
+.c-icon{
+    height: auto;
+    width:auto;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+.form-head{
+    text-align: center;
+}
+ /* footer */
+ .foot{
+    height: 4vh;
+    width: 100%;
+    background-color: darkslategray;
+    color: black;
+    margin-top: 5vh;
+
+}
+/*form */
+.textfield{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 2vh;
+    width: 75%;
+}
+.btn-form{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 3vh;
+    width: 40%;
+}
+/* hadings */
+.contact-main-heading{
+    font-weight: bold;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+}
+.contact-h2{
+    margin-left: 1vw; 
+    margin-top: 2vh;
+}
+ /* general */
+ 
+.primary{
+    font-family: 'Merriweather', serif;
+}
+.secondary{
+    font-family: 'Oxygen', serif;
+}
+@media screen and (max-width:736px) {
+    .contact-main-heading{
+        font-size: 1.8rem;
+    }
+}
+@media only screen and (max-width:500px) {
+
+    .contact-main{
+        display: block;
+        margin: auto;
+    }
+    .contact-details{
+        width: 100%;
+    }
+    .icon{
+        margin-right: 5vw;
+    }
+    .c-icon{
+        margin-right: 4vw;
+        margin-left: 0vw;
+        margin-top: 1vh;
+    }
+    .icon-img{
+        height:8vh;
+        width: 7vw;
+    }
+    .form-details{
+        width: 85%;
+        margin: auto;
+        margin-top: 5vh;
+    }
+    .btn-form{
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+    .details{
+        font-size: 1.2rem;
+    }
+}

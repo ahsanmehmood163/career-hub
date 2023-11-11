@@ -1,0 +1,125 @@
+body{
+
+    /* background-color: #B948FF; */
+    background: url('../images/banner\ img\ 3.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+     font-family: 'Merriweather';
+ }
+ .container{
+     height: auto;
+     width: 45%;
+     margin-left: auto;
+     margin-top: 11vh;
+     background: #bdc3c7;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     border-radius: 20px;
+ }
+ .textfield{
+     margin-left: 7vw;
+     width: 65%;
+     margin-bottom: 4vh;
+ }
+ .select-menu{
+    display: flex;
+    width: 65%;
+    border: 1px solid red;
+ }
+ .radio-class{
+     display: flex;
+     margin-left: 2vw;
+ }
+ .radio-main-label{
+     margin-right: 0.5vw;
+     margin-left: 3vw;
+     font-weight: 600;
+ }
+ .radio-label{
+     margin-right: 0.7vw;
+     font-weight: bold;
+ }
+ .btn-signup{
+     margin-left: 12vw;
+     margin-bottom: 5vh;
+     width: 35%;
+ }
+ .primary{
+     text-align: center;
+     font-family: 'Oxygen';
+     font-size: 2.3rem;
+     font-weight: bold;
+ }
+ .page-heading{
+     margin-top: 10vh;
+     margin-bottom: 5vh;
+ }
+ .field-class
+{
+    color:white;
+    margin-left:200px;
+    font-size: 20px;
+}
+
+.message-h4{
+background-color:white;
+color:red;
+}
+ @media screen and (max-width:900px) {
+    .radio-class{
+        display: block;
+        margin-left: 7vw;
+        font-size: 1.2rem;
+    }
+    .form-check{
+        margin-left: 4vw;
+    }
+    .container{
+        width: 67%;
+    }
+    .textfield{
+        margin-left: 10vw;
+        margin-bottom: 2vh;
+    }
+    .btn-signup{
+        margin-left: 15vw;
+        margin-bottom: 5vh;
+        width: 40%;
+    }
+ }
+
+ @media screen and (max-width:550px) {
+    .container{
+        width: 80%;
+    }
+    .textfield{
+        margin-left: 7vw;
+        margin-bottom: 2vh;
+        width: 80%;
+    }
+    .page-heading{
+        font-size: 1.9rem;
+    }
+
+ }
+ @media screen and (max-width:390px)
+ {
+     .container{
+         width: 100%;
+     }
+     body{
+         background-color: white;
+         background-image: none;
+     }
+ }
+ @media screen and (max-width:300px) {
+     .textfield{
+         width: 90%;
+         margin-left: 2vw;
+     }
+     .btn-signup{
+         width: 50%;
+     }
+     
+ }

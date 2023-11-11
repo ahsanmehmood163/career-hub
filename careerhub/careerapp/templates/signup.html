@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+
+    {% block css_styling %}
+    <link rel="stylesheet" href="{%static 'css/signup.css' %}">
+    {% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+
+        <h3 class="primary page-heading">Get Started Here!</h3>
+        <form method="post" action="create_user" enctype="multipart/form-data">
+            {% csrf_token %}
+             {% for message in messages %}
+        <h4 class="message-h4">{{message}}</h4>
+              {% endfor %}
+            {% for field in form %}
+            <div class="mb-3 field-class">
+                {{field.label}}
+                {{field}}
+            </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-success btn-signup">
+       </form>
+    </div>
+</body>
+{% endblock %}

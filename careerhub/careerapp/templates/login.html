@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block title %}
+    <title>Document</title>
+    {% endblock %}
+
+    {% block css_styling %}
+    <link rel="stylesheet" href="{%static 'css/login.css' %}">
+    {% endblock %}
+
+    {% block content %}
+    <body>
+       {% for message in messages %}
+       <h4 class="message-h4">{{message}}</h4>
+       {% endfor %}
+        <div class="container">
+            <h3 class="secondary page-heading">Login Here</h3>
+            <form method="post" action="login_auth">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3 field-class">
+                    {{field.label}}
+                    {{field}}
+                </div>
+                {% endfor %}
+                <input type="submit"class="btn btn-success btn-login">
+           </form>
+        </div>
+    </body>
+    {% endblock %}

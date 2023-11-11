@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Course Detail
+{% endblock %}
+
+{% block css_styling %}
+<link rel="stylesheet" href="{%static 'css/course_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container course-section">
+    <img src="{{course.image.url}}">
+    <h1>{{course.name}}</h1>
+        <form method="post" action="{% url 'course_detail' course.id %}">
+            {% csrf_token %}
+            <input type="hidden" value="{{course.id}}" name="course_id">
+            <select name="selected_album">
+                {% for album in all_albums %}
+                <option value='{{album.id}}'>{{album.name}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Add">
+        </form>
+
+    <h4>Field: {{course.field}}</h4>
+    <h5>File Path: {{course.file}}</h5>
+    </div>
+{% endblock %}

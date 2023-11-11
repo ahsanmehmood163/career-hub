@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+    <title>Student Dashboard</title>
+    {% endblock %}
+    {% block css_styling %}
+    <link rel="stylesheet" href="{%static 'css/studentdashboard.css' %}">
+    {% endblock %}
+
+    {% block content %}
+    <section id="student-dashboard">
+        <div class="std-dashboard">
+        <div class="menu">
+            <div class="profile-details">
+                <h2 class="dashboard-head">Profile Details</h2>
+                <div class="profile">
+                <h3 id="name" class="sub-details">Name: User</h3>
+                <h4 id="desg" class="sub-details">Designation: Student</h4>
+                <h4 id="major" class="sub-details">Major: Computer Science</h4>
+                </div>
+            </div>
+            <div class="menu-details">
+                <h2 class="dashboard-head">Main Menu</h2>
+                <div class="menu-list">
+                    <ul>
+                        <li><img class="menu-icon" src="{%static 'images/icons/caret-icon.png' %}"><a href="{% url 'student_dashboard' %}">Upload Transcript</a></li>
+                        <li><img class="menu-icon" src="{%static 'images/icons/caret-icon.png' %}"><a href="{% url 'all_courses' %}">Check Courses</a></li>
+                       <li><img class="menu-icon" src="{%static 'images/icons/caret-icon.png' %}"><a href="{% url 'student_profile' %}">View Profile</a></li>
+                       <li> <img class="menu-icon" src="{%static 'images/icons/caret-icon.png' %}"><a href="">Let's Chat</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div id="detail" class="detail">
+            <div class="bar">
+                
+                <div class="search-sec">
+                <input type="text" class="search-bar">
+                <button class="btn  btn-search"><img class="search-img" src="{%static 'images/icons/search-button.png' %}"></button>
+                </div>
+                <button class="btn btn-success btn-bar"><a href="all_courses">Add Course</a></button>
+                <button class="btn btn-danger logout-btn"><a href="logout">Logout</a></button>
+
+            </div>
+
+            <h1 class="detail-head">Welcome User !</h1>
+            <div class="form-div">
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2 class="form-head">Student Detail Form</h2>
+                {% for field in form %}
+                <div class="form-field">
+                    {{field.label}}
+                    {{field}}
+                    {{field.errors}}
+                <br>
+                    </div>
+                {% endfor %}
+                <input type="submit" class=" btn btn-primary btn-questionnaire-submit">
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

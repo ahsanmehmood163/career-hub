@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Student Detail Courses
+{% endblock %}
+
+{% block css_styling %}
+<link rel="stylesheet" href="{%static 'css/all_courses.css' %}">
+{% endblock %}
+
+{% block content %}
+   <div class="container courses-sec">
+      {% for course in all_courses %}
+       <div class="card-body course-content">
+        <a href="{% url 'course_detail' course.id %}">
+            <div class="card" style="width: 18rem;">
+                <img src="{{course.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{course.name}}</h5>
+                    <i><h5 class="card-text">{{course.instructor}}</h5></i>
+                    <h5 class="card-text">{{course.field}}</h5>
+                </div>
+            </div>
+        </a>
+        </div>
+      {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    background-image: url('../images/service-background.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 120vh;
+    width: 100%;
+    margin: 5% auto;
+}
+.services-primary-heading{
+    font-weight: bold;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+}
+.single-service {
+position: relative;
+width: 31%;
+height: 318px;
+background: #fff;
+box-sizing: border-box;
+padding: 0 3px;
+transition: .5s;
+overflow: hidden;
+float: left;
+margin: 0px 10px;
+text-align: center;
+}
+
+.single-service p{            
+    color: #262626;
+    font-size: 14px;
+}
+.single-service h3 {
+    font-size: 25px;
+    font-family: poppins;
+    letter-spacing: 1px;
+    color: #262626;
+}
+.social {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+margin: 5% auto;
+}
+.icon-services{
+    height: 9vh;
+    width: 6vw;
+}
+.social i {
+font-size: 30px;
+padding: 15px;
+    color: #fff;
+}
+.single-service:hover{
+    box-shadow: 0 30px 35px rgba(0,0,0,0.7);
+}
+.single-service span {
+position: absolute;
+top: 0;
+left: -110%;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.7);
+transition: .7s;
+transform: skewX(10deg);
+}
+.single-service:hover span{
+    left: 110%;
+}
+
+@media (max-width:1000px){
+    .wrapper {
+width: 100%;
+}
+.single-service {
+width: 65%; 
+margin-left: 15vw;
+margin-right: 15vw;
+height: 35vh;
+margin-bottom: 2vh;
+padding: 0px 2px;
+}
+.single-service p{
+    font-size: 0.7rem;
+}
+.services-primary-heading{
+font-size: 1.8rem;
+}
+}
+
+@media screen and (max-width:450px) {
+    .icon-services{
+        height: 09vh;
+        width: 10vw;
+    }
+
+}

@@ -1,0 +1,22 @@
+.album-section{
+width:40%;
+box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+margin:20px auto;
+padding:20px;
+}
+
+.album-section h2{
+text-align:center;
+margin:20px;
+font-size:40px;
+}
+
+.album-section h4{
+font-size:20px;
+margin:20px;
+}
+
+.album-section h3{
+font-size: 25px;
+margin: 40px 10px;
+}

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="{%static 'css/blog.css' %}">
+</head>
+<body>
+   <section id="blog-section">
+        <h2 class="blog-primary-heading">Latest Blogs</h2>
+        <div class="container blogs-sec">
+          {% for post in posts %}
+    {% if forloop.first %}<div class="row">{% endif %}
+      <div class="col blog">
+        <div class="card" style="width: 18rem;">
+          {% if post.blog_related_to == 'exam' %}
+        <img src="{%static 'images/exam.jpg' %}" class="card-img-top blog-img" alt="...">
+          {% elif post.blog_related_to == 'study' %}
+        <img src="{%static 'images/study.jpg' %}" class="card-img-top blog-img" alt="...">
+        {% elif post.blog_related_to == 'books' %}
+        <img src="{%static 'images/books.jpg' %}" class="card-img-top blog-img" alt="...">
+        {% elif post.blog_related_to == 'programming' %}
+        <img src="{%static 'images/programming.jpg' %}" class="card-img-top blog-img" alt="...">
+        {% endif %}
+        <div class="card-body blog-content">
+          <h4 class="card-head">{{post.title}}</h4>
+          <p class="card-date">{{post.created_at}}</p>
+          <p class="card-text">{{post.blog_desc| truncatewords:20}}</p>
+        </div>
+      </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+                  
+              </div>
+                <!--
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img2.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img3.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img4.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                    <img src="images/blog-img1.jpg" class="card-img-top blog-img" alt="...">
+                    <div class="card-body blog-content">
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img2.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img3.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+                <div class="col blog">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/blog-img4.jpg" class="card-img-top blog-img" alt="...">
+                        <div class="card-body blog-content">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div> -->
+            </div>
+        </div>
+   </section>
+</body>
+</html>

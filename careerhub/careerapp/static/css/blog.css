@@ -1,0 +1,35 @@
+.blogs-sec{
+    margin-top: 5vh;
+}
+.blog{
+    height: auto;
+    margin-bottom: 1vh;
+}
+.blog-img{
+    height: 25vh;
+    width: 100%;
+}
+.blog-primary-heading{
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 2vw;
+}
+.row{
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+}
+.col{
+    display: flex;
+    justify-content: center;
+}
+
+.col:hover{
+    background-color: rgb(185, 183, 183);
+    border:1px solid gray;
+}
+@media screen and (max-width:736px) {
+    .blog-primary-heading{
+        font-size: 1.8rem;
+    }
+    
+}

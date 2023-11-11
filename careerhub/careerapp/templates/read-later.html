@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Read Later Posts{% endblock %}
+
+
+{% block css_styling %}
+    <link rel="stylesheet" href="{%static 'read-later.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="read-later">
+    {% if not has_post %}
+    <p>You didn't stored any post for read later</p>
+    {% endif %}
+    <ul>
+        <h1>All Read Later Posts</h1>
+        {% for post in posts %}
+        <h2><li><a href="{% url 'post_detail_page' post.slug %}">{{post.title}}</a></li></h2>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}

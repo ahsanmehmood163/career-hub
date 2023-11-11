@@ -1,0 +1,129 @@
+body{
+    font-family: 'Oxygen';
+    background-image: url('../images/banner\ img\ 1.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+/*    background: #1D4350;  /* fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #A43931, #1D4350);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #A43931, #1D4350);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+ .container{
+    height: 55vh;
+    width: 45%;
+    margin-left: auto;
+    margin-top: 13vh;
+    border-radius: 20px;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.textfield{
+    margin-left: 4vw;
+    width: 73%;
+    margin-bottom: 4vh;
+}
+.radio-class{
+    display: flex;
+    margin-left: 2vw;
+    font-size: 1.3rem;
+}
+.radio-main-label{
+    margin-right: 0.5vw;
+    margin-left: 3vw;
+    font-weight: 600;
+}
+.radio-label{
+    margin-right: 0.7vw;
+    font-weight: bold;
+}
+.btn-login{
+    margin-left: 13vw;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    width: 35%;
+}
+.secondary{
+    text-align: center;
+    font-family: 'Merriweather';
+}
+.page-heading{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.field-class
+{
+    color:white;
+    margin-left:200px;
+    font-size: 20px;
+}
+@media screen and (max-width:900px) {
+    .radio-class{
+        display: block;
+        margin-left: 7vw;
+        font-size: 1.2rem;
+    }
+    .form-check{
+        margin-left: 4vw;
+    }
+    .container{
+        width: 67%;
+        margin-top: 05vh;
+    }
+    .textfield{
+        margin-left: 10vw;
+        margin-bottom: 2vh;
+    }
+    .btn-login{
+        margin-left: 21vw;
+        margin-bottom: 5vh;
+        width: 35%;
+    }
+ }
+
+ @media screen and (max-width:550px) {
+    .container{
+        width: 80%;
+    }
+    .textfield{
+        margin-left: 7vw;
+        margin-bottom: 2vh;
+        width: 80%;
+    }
+    .page-heading{
+        font-size: 1.9rem;
+    }
+    .btn-login{
+        margin-left: 23vw;
+        margin-top: 3vh;
+    }
+
+ }
+ @media screen and (max-width:390px)
+ {
+     .container{
+         width: 100%;
+     }
+     body{
+         background-color: white;
+         background-image: none;
+     }
+     .btn-login{
+        margin-left: 25vw;
+        width: 45%;
+    }
+
+ }
+ @media screen and (max-width:300px) {
+     .textfield{
+         width: 90%;
+         margin-left: 2vw;
+     }
+     .btn-login{
+        margin-left: 25vw;
+         width: 50%;
+     }
+     
+ }

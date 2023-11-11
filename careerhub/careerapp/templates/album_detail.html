@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Album Detail
+{% endblock %}
+
+{% block css_styling %}
+<link rel="stylesheet" href="{% static 'css/album_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container album-section ">
+    <h2>{{album.name}}</h2>
+        <a href="{% url 'all_courses' %}"><h4>Add New</h4></a>
+    <ul>
+        {% for course in all_courses %}
+        <li><a href="{% url 'course_detail' course.id %}"><h3>{{course.name}}</h3></a></li>
+        {% endfor %}
+    </ul>
+        </div>
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ {% block title %}
+  <title>Home Page</title>
+  {% endblock %}
+</head>
+<body>
+{% block content %}
+  <!--NAVBAR START-->
+  <div class="topnav" id="myTopnav">
+    <a href="#carousel">Home</a>
+    <a href="#about-section">About</a>
+    <a href="#services-section">Services</a>
+    <a href="#blog-section">Blog</a>
+    <a href="#contact">Contact</a>
+    <div class="btn-container-nav">
+      <a class="login-nav" href="login">Login</a>
+     <a class="signup-nav" href="signup">Signup</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+  </div>
+  <!--IMAGE SLIDER START-->
+  <section id="carousel">
+    <div class="carousel-container">
+      <div class="hero-compart" id="slider">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="slider-img" src="{%static 'images/banner img 1.jpeg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img class="slider-img" src="{%static 'images/banner img 3.jpeg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img class="slider-img" src="{%static 'images/banner img 8.jpeg' %}" class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="{%static 'js/navbar.js' %}"></script>
+  <!-- IMAGE SLIDER END -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <section id="about-section">
+    <h1 class="about-us-main-heading">About Us</h1>
+    <div id="about-us">
+      <div id="about-us-img-section" class="about-us-section">
+        <img class="about-img" src="{%static 'images/about-img.jpg' %}">
+      </div>
+      <div id="about-us-content-section" class="about-us-section">
+        <h2 class="about-us-secondary-head">Who We Are?</h2>
+        <p class="about-us-content about-us-para-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Similique natus quis delectus atque, ad laboriosam! Alias, excepturi quas. Consequuntur dolorum, vel cum
+          voluptas animi itaque omnis repellat quidem eos facilis!Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Eveniet odio temporibus inventore dolorum commodi praesentium porro tempora aut doloribus sunt?Lorem,
+          ipsum dolor sit amet consectetur adipisicing elit. Accusantium, odio cupiditate, quibusdam dolorem ab
+          molestiae eveniet distinctio accusamus impedit reiciendis delectus magnam? Reiciendis odit, totam sequi ullam
+          fugiat repellendus vel sunt, quos numquam officiis quidem corrupti praesentium magnam doloremque voluptate
+          tempora quasi nulla! Porro quasi error esse, aut voluptatem Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Autem impedit quisquam corporis fugit eius fugiat repellat facere cupiditate omnis ullam dignissimos
+          quaerat minima alias culpa debitis dolore neque numquam, sapiente iste</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services-section">
+    <div class="wrapper">
+      <h2 class="services-primary-heading">Our Services</h2>
+      <div class="single-service">
+        <div class="social">
+          <img class="icon-services" src="{%static 'images/icons/instructor.png' %}">
+        </div>
+        <span></span>
+        <h3>Experienced Instructor</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium
+          corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur.
+          Natus.</p>
+      </div>
+      <div class="single-service">
+        <div class="social">
+          <img class="icon-services" src="{%static 'images/icons/book.png' %}">
+        </div>
+        <span></span>
+        <h3>Upgraded Courses</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium
+          corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur.
+          Natus.</p>
+      </div>
+      <div class="single-service">
+        <div class="social">
+          <img class="icon-services" src="{%static 'images/icons/chat.png' %}">
+        </div>
+        <span></span>
+        <h3>Let's Chat</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et delectus, in veritatis veniam non praesentium
+          corporis dolorum necessitatibus. Culpa odio enim amet praesentium illo voluptates ab quidem, nam consequuntur.
+          Natus.</p>
+      </div>
+    </div>
+  </section>
+  <!--LATEST BLOGS SECTION START-->
+  <section id="blog-section">
+    <h2 class="blog-primary-heading">Latest Blogs</h2>
+    <div class="container blogs-sec">
+      {% for post in latest_posts %}
+      {% if forloop.first %}<div class="row">{% endif %}
+        {% include 'post_container.html' %}
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+      {% endfor %}
+
+    </div>
+  </section>
+  <!--CONTACT START-->
+  <section id="contact">
+    <div class="contact-container">
+      <h1 class="contact-main-heading ">Contact Us</h1>
+      <div class="contact-main">
+        <div class="contact-box contact-details">
+          <h2 class="secondary contact-h2">Get in Touch With Us</h2>
+          <div class="imp-details">
+            <div class="contact-icons">
+              <div class="c-icon"><a href=""><img class="icon-img" src="{%static 'images/telephone.png' %}"></a></div>
+              <div class="c-icon"><a href=""><img class="icon-img" src="{%static 'images/email.png' %}"></a></div>
+              <div class="c-icon"><a href=""><img class="icon-img" src="{%static 'images/address (1).png' %}"></a></div>
+            </div>
+            <div class="imp-contact-details">
+              <h4 class="details">Phone No: 042-2233446</h4>
+              <h4 class="details">Email: info@careerhub.com</h4>
+              <h4 class="details">Address: 23/A Sector H DHA Phase 08 Lahore</h4>
+            </div>
+          </div>
+          <h5 class="social">Also Connect us on,</h5>
+          <div class="social-icons">
+            <div class="icon"><a href=""><img class="icon-img" src="{%static 'images/linkedin.png' %}"></a></div>
+            <div class="icon"><a href=""><img class="icon-img" src="{%static 'images/twitter.png' %}"></a></div>
+            <div class="icon"><a href=""><img class="icon-img" src="{%static 'images/facebook.png' %}"></a></div>
+            <div class="icon"><a href=""><img class="icon-img" src="{%static 'images/instagram.png' %}"></a></div>
+            <div class="icon"><a href=""><img class="icon-img" src="{%static 'images/gmail.png' %}"></a></div>
+          </div>
+        </div>
+        <div class="contact-box form-details">
+          <h2 class="secondary contact-h2">Feel Free To Contact Us</h2>
+          <form method="post" action="login">
+            <div class="mb-3">
+
+              <input type="text" name="username" class="textfield form-control-md" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="textfield form-control-md" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <textarea class="textfield form-control" id="message" rows="5"
+                placeholder="Enter your Message Here"></textarea>
+            </div>
+            <div class="mb-3">
+              <input type="submit" class="btn btn-success btn-form">
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--CONTACT END-->
+
+</body>
+{% endblock %}
+</html>

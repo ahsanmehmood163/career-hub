@@ -1,0 +1,15 @@
+<div class="col blog">
+          <div class="card" style="width: 18rem;">
+            <a style="text-decoration:none; color:black" href="{% url 'post_detail' post.slug %}">
+            <img src="{{post.image.url}}" class="card-img-top blog-img" alt="...">
+
+            <div class="card-body blog-content">
+              <h4 class="card-head">{{post.title}}</h4>
+              <p class="card-date">{{post.date}}</p>
+              <b> <i><p class="card-text" >{{post.author}}</p></i></b>
+              <p class="card-text">{{post.content| truncatewords:20}}</p>
+
+            </div>
+            </a>
+          </div>
+        </div>

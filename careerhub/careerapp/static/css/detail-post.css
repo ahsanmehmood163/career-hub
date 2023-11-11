@@ -1,0 +1,151 @@
+h2{
+color:red;
+font-size:50px;
+color:grey;
+margin-left:50px;
+margin-top:50px;
+font-style:italic;
+}
+#summary{
+height:250px;
+width:100%;
+background-color:blue;
+border:1px solid black;
+display:flex;
+color:white;
+}
+#summary article{
+margin-left:auto;
+margin-right: 50px;
+margin-top: 20px;
+}
+
+#summary article span{
+font-style:italic;
+}
+.address-name{
+font-size:20px;
+text-decoration:none;
+color:white;
+}
+main{
+margin-top:50px;
+height:610px;
+width:70%;
+background-color:grey;
+display:flex;
+margin:auto;
+}
+
+main p{
+font-size:20px;
+margin:20px;
+}
+#comment-form{
+margin:3rem auto;
+width:90%;
+max-width:40rem;
+border-radius:12px;
+background-color:white;
+box-shadow: 0 2px 8px grey;
+padding:3rem;
+}
+#comment-form button{
+font:inherit;
+background-color:#390281;
+color:white;
+border: 1px solid #390281;
+padding: 0.5rem 1.5rem;
+border-radius:6px;
+cursor:pointer;
+}
+#comment-form button:active,
+#comment-form button:hover{
+background-color: #4f0ba7;
+border-color: #4f0ba7;
+}
+#comment-form h2{
+font-size:30px;
+color:grey;
+margin-left:10px;
+font-style:italic;
+
+}
+.form-control{
+margin-bottom:1rem;
+}
+
+.form-control label{
+font-weight:bold;
+margin-bottom:0.5rem;
+display:block;
+}
+
+.form-control input,
+.form-control textarea{
+display:block;
+width:100%;
+font:inherit;
+padding:0.25rem;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+.error-list{
+list-style:none;
+margin:0.5rem 0;
+padding:0;
+color: #d6000b;
+}
+
+.invalid label{
+color: #d6000b;
+}
+
+.invalid input,
+.invalid textarea{
+border-color: #d6000b;
+background-color: #ffe6e7;
+}
+
+
+#comments{
+margin: 3rem auto;
+width:90%;
+max-width: 60rem;
+border-radius:12px;
+background-color: white;
+box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+padding:1rem 2rem;
+}
+
+#comments ul{
+list-style:none;
+margin:0;
+padding:0;
+}
+
+#comments li{
+margin-bottom:1rem;
+border-bottom: 2px solid #ccc;
+}
+
+#read-later{
+margin-top:10rem;
+}
+
+#read-later button{
+background-color:transparent;
+border: 1px solid white;
+padding:0.5rem 2rem;
+font:inherit;
+color:white;
+cursor:pointer;
+}
+
+#read-later button:hover,
+#read-later button:active{
+background-color:white;
+color:#390281;
+}
+
